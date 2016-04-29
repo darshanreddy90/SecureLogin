@@ -1,0 +1,69 @@
+<html ng-app="loginDashboard">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-route.min.js"></script>
+    <script src="login.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="#">SecureLogin</a>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div id="mfabox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                <div class="panel-title">Multi Factor Authentication</div>
+            </div>
+            <div class='panel-body'>
+                <label id="mfaLabel">We want to make sure it is really You before allowing you access to this resource. We have sent an OTP to your email
+                <span id="mfaEmail">darshan@gmail.com</span>, Please Enter below</label>
+                <form class="form-signin" method="post"  action="/mfaAuth" role="form">
+                    <div>
+                    <label for="inputMFA" class="sr-only">Enter OTP</label>
+                    <input type="text" id="inputMFA" name= "mfa" class="form-control" placeholder="OTP" required>
+                    </div>
+                    <button class="btn btn-lg btn-info btn-block" type="submit">Complete MFA</button>
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="padding-top:15px; font-size:85%" >
+                                Didn't get OTP?
+                                <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                    Click here to Resent
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+</div>
+</body>
+</html>
